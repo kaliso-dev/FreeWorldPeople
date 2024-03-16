@@ -7,28 +7,54 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anek+Malayalam:wght@100..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    
     <title>FWP</title>
 </head>
 <body>
-    <nav>
-        <div>
-            <h1 style="font-family: Anek Malayalam;">Free World people</h1>
-        </div>
-        <div class="nav-bar" style="font-family: Anek Malayalam;">
-            <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">Contact</a>
-        </div>
-
-        <div class="language">
-            <button id="language">Language</button>
-        </div>
-    </nav>
-
-    <div class="audio">
-
+    <script src="script.js"></script>
+    <header class="header">
+    <div class="container">
+        <div class="bottom-bar">
+          <div class="bottom-bar__content">
+          <a href="#" class="logo">
+              <img class="logo__img" src="logo.jpg" alt="logo">
+              <span class="logo__text">Free World People</span>
+          </a>
         
+            <nav class="nav">
+              <ul class="nav__list">
+                <li class="nav__item">
+                  <a class="nav__link" href="index.html">Home</a>
+                </li>
+                <li class="nav__item">
+                  <a class="nav__link" href="chargement.html">About</a>
+                </li>
+                <li class="nav__item">
+                  <a class="nav__link" href="contact.html">Contact</a>
+                </li>
+    
+    
+                <li class="nav__item">
+                  <form action="deconnexion.php" method="post">
+                    <input class="submit" type="submit" value="Déconnexion">
+                  </form>
+                </li>
+              </ul>
+            </nav>
+     
+            <div class="hamburger">
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+            </div>
+          </div>
+        </div>
+       </div> 
+      </header>
+    
+
+
+    <div class="audio">      
 <h1>
     <a href="" style="font-family: Anek Malayalam;" class="typewrite" data-period="2000" data-type='[ "Free World People", "We are the World"]'>
       <span class="wrap"></span>
@@ -39,6 +65,24 @@
             <source src="french.mp3">
         </audio>
     </div>
+
+    <script>
+      const navEl = document.querySelector('.nav');
+const hamburgerEl = document.querySelector('.hamburger');
+const navItemEls = document.querySelectorAll('.nav__item');
+
+hamburgerEl.addEventListener('click', () => {
+  navEl.classList.toggle('nav--open');
+  hamburgerEl.classList.toggle('hamburger--open');
+});
+
+navItemEls.forEach(navItemEl => {
+  navItemEl.addEventListener('click', () => {
+    navEl.classList.remove('nav--open');
+    hamburgerEl.classList.remove('hamburger--open');
+  });
+});
+    </script>
 </body>
 </html>
 
