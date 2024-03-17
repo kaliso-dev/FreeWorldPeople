@@ -3,7 +3,7 @@ body {
     color: #171D1C;
     margin: 0;
     top: 0;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 .container_action {
