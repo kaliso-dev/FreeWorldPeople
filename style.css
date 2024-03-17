@@ -5,6 +5,24 @@ body {
     top: 0;
 }
 
+iframe {
+  height: 80vh;
+  width: 100%;
+  transition: transform 0.5s ease; /* Animation de transition */
+  border-radius: 20px 20px 0 0;
+}
+
+.iframe {
+  transition: transform 0.1s ease; /* Animation de transition */
+}
+
+.iframe1 {
+  transform: translateX(100%); /* Initiallement caché en dehors de l'écran */
+}
+
+.iframe2 {
+  transform: translateX(-100%); /* Initiallement caché en dehors de l'écran */
+}
 
 .audio {
     height: calc(100vh - 50px);
@@ -47,7 +65,7 @@ ul {
   body {
     background-color: #e8f0f7;
     font-family: 'Inter', sans-serif;
-    min-height: 100vh;
+    
   }
   
   /* NORMAL STYLES */
