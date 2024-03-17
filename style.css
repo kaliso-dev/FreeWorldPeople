@@ -12,18 +12,6 @@ iframe {
   border-radius: 20px 20px 0 0;
 }
 
-.iframe {
-  transition: transform 0.1s ease; /* Animation de transition */
-}
-
-.iframe1 {
-  transform: translateX(100%); /* Initiallement caché en dehors de l'écran */
-}
-
-.iframe2 {
-  transform: translateX(-100%); /* Initiallement caché en dehors de l'écran */
-}
-
 .audio {
     height: calc(100vh - 50px);
     width: 100%;

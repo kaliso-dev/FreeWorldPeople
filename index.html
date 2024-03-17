@@ -69,7 +69,7 @@
 
     div.container
 
-    <iframe class="iframe iframe2" src="https://react-anim-globe.vercel.app/" frameborder="0" width="100%" height="50vh"></iframe>
+    <iframe class="iframe" src="https://defectingcat.github.io/3d-globe/" frameborder="0" width="100%" height="50vh"></iframe>
 
     <script>
       const navEl = document.querySelector('.nav');
@@ -89,27 +89,7 @@ navItemEls.forEach(navItemEl => {
 });
 
 
-document.addEventListener('DOMContentLoaded', function() {
-  const iframe1 = document.querySelector('.iframe1');
-  const iframe2 = document.querySelector('.iframe2');
 
-  setTimeout(function() {
-    iframe1.style.transform = 'translateX(0)';
-  }, 0);
-
-  window.addEventListener('scroll', function() {
-    const iframe2Position = iframe2.getBoundingClientRect();
-    const windowHeight = window.innerHeight;
-
-    // Calcul de la position verticale de l'iframe2 par rapport au milieu de la fenêtre
-    const verticalPosition = iframe2Position.top + iframe2Position.height / 2;
-
-    // Vérification si l'iframe2 est visible au milieu de la fenêtre
-    if (verticalPosition > 0 && verticalPosition < windowHeight) {
-      iframe2.style.transform = 'translateX(0)';
-    }
-  });
-});
 
     </script>
 </body>
