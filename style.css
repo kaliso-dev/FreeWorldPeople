@@ -5,11 +5,29 @@ body {
     top: 0;
 }
 
+.container_action {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+  width: 100%;
+}
+
+.box {
+  border: solid 2px #171D1C;
+  height: 300px;
+  width: 300px;
+  border-radius: 20px;
+  margin: 0 50px 0 10px;
+  
+}
+
 iframe {
-  height: 80vh;
+  height: 90vh;
   width: 100%;
   transition: transform 0.5s ease; /* Animation de transition */
-  border-radius: 20px 20px 0 0;
+  border-radius: 0 0 20px 20px;
+  overflow: hidden;
+  
 }
 
 .audio {
@@ -19,11 +37,12 @@ iframe {
     align-items: center;
     justify-content: space-around;
     flex-direction: column;
+    margin-bottom: 30px;
 }
 
 .typewrite {
     font-size: 150px;
-    margin-bottom: 70px;
+
 }
 
 #language {
@@ -260,7 +279,16 @@ ul {
 
 @media screen and (max-width: 600px) {
   .typewrite {
-    font-size: 50px;
+    font-size: 35px;
+  }
+
+  .container_action {
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .box {
+    margin-bottom: 15px;
   }
 
   p {
