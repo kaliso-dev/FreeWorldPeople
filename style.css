@@ -17,13 +17,18 @@ body {
 .container_footer {
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   flex-direction: row;
 }
 
-#contact {
+.contact {
   color: #EFE9F4;
+  width: 200px;
+}
+
+.share {
+  margin-left: 7px;
 }
 
 .container_action {
@@ -293,6 +298,10 @@ ul {
 @media screen and (max-width: 600px) {
   .typewrite {
     font-size: 35px;
+  }
+
+  .contact {
+    font-size: 25px;
   }
 
   .container_action {
