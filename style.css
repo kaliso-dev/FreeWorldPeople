@@ -116,7 +116,7 @@ ul {
   }
   
   .top-bar {
-    background-color: #EFE9F4;
+    background-color: #c3c2c4;
     position: sticky;
     top: 0;
     z-index: 1000; /* Assure que la barre de navigation est au-dessus du carousel */
@@ -141,7 +141,7 @@ ul {
   }
   
   .bottom-bar {
-    background-color: #EFE9F4;
+    background-color: #ececec;
   }
   
   .bottom-bar__content {
@@ -223,7 +223,7 @@ ul {
   .bar {
     height: 2px;
     width: 27px;
-    background-color: #fff;
+    background-color: #151515;
     margin: 5px 0;
     opacity: 0.8;
     transition: all 0.3s ease-in-out;
