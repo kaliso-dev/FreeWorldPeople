@@ -6,6 +6,13 @@ body {
     overflow-x: hidden;
 }
 
+#shareButton {
+  border-radius: 20px;
+  border: solid 2px #e8f0f7;
+  background: linear-gradient(90deg, #4568dc, #b06ab3);
+  padding: 10px 7px;
+}
+
 .footer {
   background-color: #171D1C;
   height: 100%;
@@ -17,7 +24,7 @@ body {
 .container_footer {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   flex-direction: row;
 }
@@ -302,6 +309,10 @@ ul {
 
   .contact {
     font-size: 25px;
+  }
+
+  .container_footer {
+    justify-content: space-between;
   }
 
   .container_action {
