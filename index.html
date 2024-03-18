@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anek+Malayalam:wght@100..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    
+    <script src="https://kit.fontawesome.com/8bb6d3ab68.js" crossorigin="anonymous"></script>
     <title>FWP</title>
 </head>
 <body>
@@ -17,7 +17,7 @@
         <div class="bottom-bar">
           <div class="bottom-bar__content">
           <a href="#" class="logo">
-              <img class="logo__img" src="logo1.png" alt="logo">
+              <img class="logo__img" src="logo.png" alt="logo">
               <span class="logo__text" style="font-family: Anek Malayalam; background-image: linear-gradient(90deg, #4568dc, #b06ab3); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"><strong>Free</strong> World People</span>
 
           </a>
@@ -60,7 +60,7 @@
 
 <iframe class="iframe" src="./dist/index.html" frameborder="0" width="40%" height="50vh" scrolling="no"></iframe>
 <h1>
-    <a href="" style="font-family: Anek Malayalam; background-image: linear-gradient(90deg, #4568dc, #b06ab3); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"" class="typewrite" data-period="2000" data-type='[ "Free World People", "We are the World"]'>
+    <a href="" style="font-family: Anek Malayalam; background-image: linear-gradient(90deg, #4568dc, #b06ab3); -webkit-background-clip: text; -webkit-text-fill-color: transparent;" class="typewrite" data-period="2000" data-type='[ "Free World People", "We are the World"]'>
       <span class="wrap"></span>
     </a>
   </h1>
@@ -76,7 +76,15 @@
       <div class="box"></div>
     </div>
 
-    
+    <footer class="footer">
+      <div class="container_footer">
+          <div class="share">
+            <button id="shareButton">Partager</button>
+          </div>
+          <h1>Site created by <a id="contact" href="" style="font-family: Anek Malayalam; background-image: linear-gradient(90deg, #4568dc, #b06ab3); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Kaliso</a></h1>
+      </div>
+  </footer>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script>
       const navEl = document.querySelector('.nav');
@@ -96,6 +104,19 @@ navItemEls.forEach(navItemEl => {
 });
 
 
+document.getElementById("shareButton").addEventListener("click", function() {
+  if (navigator.share) {
+    navigator.share({
+      title: 'Free World People',
+      text: 'Rejoigner notre cause',
+      url: 'https://kaliso-dev.github.io/FreeWorldPeople/'
+    })
+    .then(() => console.log('Partage réussi'))
+    .catch((error) => console.log('Erreur lors du partage :', error));
+  } else {
+    console.log('La fonctionnalité de partage n\'est pas supportée sur ce navigateur.');
+  }
+});
 
 
 

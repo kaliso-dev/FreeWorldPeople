@@ -6,6 +6,26 @@ body {
     overflow-x: hidden;
 }
 
+.footer {
+  background-color: #171D1C;
+  height: 100%;
+  color: #e8f0f7;
+  display: flex;
+  justify-content: center;
+}
+
+.container_footer {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+}
+
+#contact {
+  color: #EFE9F4;
+}
+
 .container_action {
   display: flex;
   justify-content: space-between;
@@ -17,7 +37,7 @@ body {
   height: 300px;
   width: 300px;
   border-radius: 20px;
-  margin: 0 30px 0 10px;
+  margin: 0 30px 40px 10px;
   
 }
 
@@ -58,7 +78,8 @@ ul {
   
   a {
     text-decoration: none;
-    color: inherit;
+    color: #171D1C;
+
   }
   
   button {
@@ -83,7 +104,7 @@ ul {
   }
   
   .top-bar {
-    background-color: rgb(39, 44, 51);
+    background-color: #EFE9F4;
     position: sticky;
     top: 0;
     z-index: 1000; /* Assure que la barre de navigation est au-dessus du carousel */
@@ -108,7 +129,7 @@ ul {
   }
   
   .bottom-bar {
-    background-color: rgb(19, 22, 26);
+    background-color: #EFE9F4;
   }
   
   .bottom-bar__content {
@@ -124,13 +145,13 @@ ul {
   .logo {
     vertical-align: middle;
     display: flex;
-    column-gap: 10px;
     align-items: center;
   }
   
   .logo__img {
-    height: 30px;
+    height: 50px;
     border-radius: 50%;
+  
   }
   
   .logo__text {
@@ -162,16 +183,8 @@ ul {
   }
   
   .nav__link {
-    color: rgba(255, 255, 255, 0.75);
+    color: #171D1C;
     transition: all 0.2s;
-  }
-  
-  .nav__link:hover,
-  .nav__link:focus {
-    color: black;
-    background-color: whitesmoke;
-    padding: 10px;
-    border-radius: 20px;
   }
   
   .btn {
@@ -246,7 +259,7 @@ ul {
       top: 60px;
       left: -100%;
       transform: translateX(-50%);
-      background-color: rgb(19, 22, 26);
+      background-color: #EFE9F4;
       width: 100%;
       padding: 10px 0 25px;
   }
