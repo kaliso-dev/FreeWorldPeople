@@ -36,9 +36,21 @@
     
     
                 <li class="nav__item">
-                  <form action="" method="post">
-                    <input class="language" type="submit" value="Language">
-                  </form>
+                  <select id="languageSelector">
+                    <option value="french">French</option>
+                    <option value="english">English</option>
+                    <option value="espagnol">Espagnol</option>
+                    <option value="allemand">Allemand</option>
+                    <option value="italien">Italien</option>
+                    <option value="portugais">Portugais</option>
+                    <option value="polonais">Polonais</option>
+                    <option value="russe">Russe</option>
+                    <option value="ukrainien">Ukrainien</option>
+                    <option value="grec">Grec</option>
+                    <option value="turc">Turc</option>
+                    <option value="bulgare">Bulgare</option>
+                    <!-- Ajoutez d'autres options pour chaque langue disponible -->
+                  </select>
                 </li>
               </ul>
             </nav>
@@ -55,19 +67,19 @@
     
 
 
-    <div class="audio">      
+    
 
-
-<iframe class="iframe" src="./dist/index.html" frameborder="0" width="40%" height="50vh" scrolling="no"></iframe>
-<h1>
-    <a href="" style="font-family: Anek Malayalam; background-image: linear-gradient(90deg, #4568dc, #b06ab3); -webkit-background-clip: text; -webkit-text-fill-color: transparent;" class="typewrite" data-period="2000" data-type='[ "Free World People", "We are the World"]'>
-      <span class="wrap"></span>
-    </a>
-  </h1>
-        <audio controls>
-            <source src="french.mp3">
-        </audio>
-    </div>
+<div class="audio">
+  <iframe class="iframe" src="./dist/index.html" frameborder="0" width="40%" height="50vh" scrolling="no"></iframe>
+    <h1>
+        <a href="" style="font-family: Anek Malayalam; background-image: linear-gradient(90deg, #4568dc, #b06ab3); -webkit-background-clip: text; -webkit-text-fill-color: transparent;" class="typewrite" data-period="2000" data-type='[ "Free World People", "We are the World"]'>
+          <span class="wrap"></span>
+        </a>
+      </h1>
+      <audio id="audioPlayer" controls autoplay>
+        <!-- Le fichier audio sera chargé dynamiquement en fonction de la langue sélectionnée -->
+      </audio>
+</div>
 
     <div class="container_action">
       <div class="box"></div>
@@ -86,41 +98,96 @@
   </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script>
-      const navEl = document.querySelector('.nav');
-const hamburgerEl = document.querySelector('.hamburger');
-const navItemEls = document.querySelectorAll('.nav__item');
 
-hamburgerEl.addEventListener('click', () => {
-  navEl.classList.toggle('nav--open');
-  hamburgerEl.classList.toggle('hamburger--open');
+<script>
+    const navEl = document.querySelector('.nav');
+    const hamburgerEl = document.querySelector('.hamburger');
+    const navItemEls = document.querySelectorAll('.nav__item');
+
+    hamburgerEl.addEventListener('click', () => {
+      navEl.classList.toggle('nav--open');
+      hamburgerEl.classList.toggle('hamburger--open');
+    });
+
+    navItemEls.forEach(navItemEl => {
+      navItemEl.addEventListener('click', () => {
+        navEl.classList.remove('nav--open');
+        hamburgerEl.classList.remove('hamburger--open');
+      });
+    });
+
+// Gestion du partage 
+
+    document.getElementById("shareButton").addEventListener("click", function() {
+      if (navigator.share) {
+        navigator.share({
+          title: 'Free World People',
+          text: 'Pour un monde plus juste, Free World People !\n',
+          url: 'https://kaliso-dev.github.io/FreeWorldPeople/'
+        })
+        .then(() => console.log('Partage réussi'))
+        .catch((error) => console.log('Erreur lors du partage :', error));
+      } else {
+        console.log('La fonctionnalité de partage n\'est pas supportée sur ce navigateur.');
+      }
+    });
+
+//Gestion de l'audio 
+
+// Définir la valeur par défaut du sélecteur de langue
+const defaultLanguage = 'french';
+
+// Charger l'audio correspondant à la langue par défaut au chargement de la page
+window.addEventListener('load', function() {
+  loadAudio(defaultLanguage);
 });
 
-navItemEls.forEach(navItemEl => {
-  navItemEl.addEventListener('click', () => {
-    navEl.classList.remove('nav--open');
-    hamburgerEl.classList.remove('hamburger--open');
-  });
+// Événement déclenché lorsque la valeur du sélecteur de langue change
+document.getElementById('languageSelector').addEventListener('change', function() {
+  const selectedLanguage = this.value;
+  loadAudio(selectedLanguage);
 });
 
+// Fonction pour charger l'audio correspondant à la langue sélectionnée
+function loadAudio(language) {
+  const audioUrl = getAudioUrl(language);
+  const audioPlayer = document.getElementById('audioPlayer');
+  audioPlayer.src = audioUrl;
+}
 
-document.getElementById("shareButton").addEventListener("click", function() {
-  if (navigator.share) {
-    navigator.share({
-      title: 'Free World People',
-      text: 'Pour un monde plus juste, Free World People !\n',
-      url: 'https://kaliso-dev.github.io/FreeWorldPeople/'
-    })
-    .then(() => console.log('Partage réussi'))
-    .catch((error) => console.log('Erreur lors du partage :', error));
-  } else {
-    console.log('La fonctionnalité de partage n\'est pas supportée sur ce navigateur.');
+// Fonction pour obtenir l'URL de l'audio en fonction de la langue sélectionnée
+function getAudioUrl(language) {
+  switch (language) {
+    case 'french':
+      return 'french.mp3';
+    case 'english':
+      return 'english.mp3';
+    case 'espagnol':
+      return 'espagnol.mp3';
+    case 'allemand': 
+      return 'allemand.mp3';
+    case 'italien':
+      return 'italien.mp3';
+    case 'portugais': 
+      return 'portugais.mp3';
+    case 'polonais': 
+      return 'polonais.mp3';
+    case 'russe':
+      return 'russe.mp3';
+    case 'ukrainien': 
+      return 'ukrainien.mp3'
+    case 'grec': 
+      return 'grec.mp3'
+    case 'turc': 
+      return 'turc.mp3'
+    case 'bulgare': 
+      return 'bulgare.mp3'
+    // Ajoutez d'autres cas pour chaque langue disponible
+    default:
+      return '';
   }
-});
-
-
-
-    </script>
+}
+</script>
 </body>
 </html>
 
